@@ -18,7 +18,11 @@ replace_config () {
 
     if [ -f "$PWD/$1" ]
     then
-        rm ~/$1
+        if [ -f ~/$1 ]
+        then
+            rm ~/$1
+        fi
+
         ln -s $PWD/$1 ~/$1
     fi
 }
