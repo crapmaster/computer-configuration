@@ -1,11 +1,32 @@
 #!/bin/bash
 
-# Replaces all config files with symlinks
-# to this repository.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Replaces a configration file with a symbolic link to this
+# directory if the file exists.
 
-rm ~/.bash_aliases
-rm ~/.bashrc
+# @$1 : file including path in users home,
+#       e.g.
+#       $1=.bashrc       =>   ~/.bashrc
+#       $1=app1/my.cfg   =>   ~/app1/my.cfg
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+replace_config () {
+    if [ -z "$1" ]
+    then
+        echo "File name missing!"
+        exit 1
+    fi
 
-ln -s $PWD/.bash_aliases ~/.bash_aliases
-ln -s $PWD/.bashrc       ~/.bashrc
+    if [ -f "$PWD/$1" ]
+    then
+        rm ~/$1
+        ln -s $PWD/$1 ~/$1
+    fi
+}
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Replace all config files with symlinks to this repository.
+
+replace_config '.bash_aliases'
+replace_config '.bashrc'
+replace_config '.gitconfig'
 
