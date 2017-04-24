@@ -7,3 +7,6 @@ alias rm='rm -i'
 # Alias for cp command, I want to be prompted before overwriting files
 alias cp='cp -i'
 
+# Alias for mv command, I want to be prompted before overwriting files
+alias mv='mv -i'
+
