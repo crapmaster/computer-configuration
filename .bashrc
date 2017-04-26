@@ -156,6 +156,9 @@ parse_git_branch() {
 }
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]$(parse_git_branch)\[\033[00m\] $ '
 
+# Add local bin folder to path
+PATH=$PATH:$HOME/bin
+
 # Specific operations to this computer
 # By creating a .bashprofile inside your home directory
 if [ -f $HOME/.bashprofile ]; then
