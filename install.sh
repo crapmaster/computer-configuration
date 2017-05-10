@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Replaces a configration file with a symbolic link to this
-# directory if the file exists.
+# Replaces a configuration item with a symbolic link to this
+# directory if the item exists.
 
 # @$1 : file including path in users home,
 #       e.g.
@@ -25,7 +25,16 @@ replace_config () {
 
         ln -s $PWD/$1 ~/$1
     fi
-}
+
+    if [ -d "$PWD/$1" ]
+    then
+        if [ -d ~/$1 ]
+        then
+            rm ~/$1
+        fi
+
+        ln -s $PWD/$1 ~/$1
+    fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Replace all config files with symlinks to this repository.
