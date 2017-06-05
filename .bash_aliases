@@ -10,3 +10,9 @@ alias cp='cp -i'
 # Alias for mv command, I want to be prompted before overwriting files
 alias mv='mv -i'
 
+# Calculate disk space
+alias space='du -csxkh *'
+
+# Clear trash
+alias clear-trash='rm -rf ~/.local/share/Trash/*'
+
