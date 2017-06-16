@@ -16,3 +16,6 @@ alias space='du -csxkh *'
 # Clear trash
 alias clear-trash='rm -rf ~/.local/share/Trash/*'
 
+# Remove double spaces from file and directory names
+alias removedoublespace="rename 's/  / /' *"
+
