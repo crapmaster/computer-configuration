@@ -165,3 +165,12 @@ if [ -f $HOME/.bashprofile ]; then
     . $HOME/.bashprofile
 fi
 
+# Add android studio to path(s)
+export ANDROID_STUDIO_HOME=$HOME/Applications/android-studio/current
+PATH=$PATH:$ANDROID_STUDIO_HOME/bin
+
+# Add Gradle to path
+export GRADLE_HOME=/opt/gradle/current
+PATH=$PATH:$GRADLE_HOME/bin
+
+

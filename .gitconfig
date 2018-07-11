@@ -20,9 +20,6 @@
 [pull]
 	rebase = true
 
-[merge]
-	tool = meld
-
 [difftool]
 	prompt = false
 
@@ -32,3 +29,16 @@
 [diff]
 	tool = meld
 
+[push]
+	default = simple
+
+[commit]
+	template = /home/petjan/.gitmessage.txt
+
+
+[merge]
+	tool=automeld
+[mergetool "automeld"]
+	cmd = meld --auto-merge $LOCAL $BASE $REMOTE --output $MERGED
+[mergetool]
+	keepBackup = false
