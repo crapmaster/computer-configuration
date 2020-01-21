@@ -173,4 +173,7 @@ PATH=$PATH:$ANDROID_STUDIO_HOME/bin
 export GRADLE_HOME=/opt/gradle/current
 PATH=$PATH:$GRADLE_HOME/bin
 
+# Add Liquibase
+export LIQUIBASE_HOME=/home/petjan/Applications/liquibase/current
+PATH=$PATH:$LIQUIBASE_HOME
 
