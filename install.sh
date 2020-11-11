@@ -35,6 +35,7 @@ replace_config () {
 
         ln -s $PWD/$1 ~/$1
     fi
+}
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Replace all config files with symlinks to this repository.
