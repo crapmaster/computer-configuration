@@ -43,4 +43,5 @@ replace_config () {
 replace_config '.bash_aliases'
 replace_config '.bashrc'
 replace_config '.gitconfig'
+replace_config '.gitmessage.txt'
 
