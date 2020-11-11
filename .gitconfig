@@ -42,3 +42,5 @@
 	cmd = meld --auto-merge $LOCAL $BASE $REMOTE --output $MERGED
 [mergetool]
 	keepBackup = false
+[help]
+	autocorrect = 1
