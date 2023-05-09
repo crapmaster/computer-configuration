@@ -177,3 +177,9 @@ PATH=$PATH:$GRADLE_HOME/bin
 export LIQUIBASE_HOME=/home/petjan/Applications/liquibase/current
 PATH=$PATH:$LIQUIBASE_HOME
 
+# Add Idea
+export IDEA_HOME=/home/petjan/Applications/idea/current
+PATH=$PATH:$IDEA_HOME/bin
+
+
+eval "$(thefuck --alias)"
