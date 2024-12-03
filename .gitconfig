@@ -8,14 +8,18 @@
 [alias]
 	changes  = diff --name-status -r
 	diffstat = diff --stat -r
+	files = "!f() { git diff --name-status \"$1^\" \"$1\"; }; f"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg = !"git lg1"
+	list-aliases = config --get-regexp ^alias
 	push-review = "!f() { git push origin HEAD:refs/for/$1/$2; }; f"
 	reset-soft = !git reset --soft HEAD^
 	reset-hard = !git reset --hard HEAD^
 	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
+	since = "!f() { git log \"$1^\"..HEAD; }; f"
+	since-compact = "!f() { git log --oneline \"$1^\"..HEAD; }; f"
 
 [pull]
 	rebase = true
