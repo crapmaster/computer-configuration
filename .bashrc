@@ -181,5 +181,15 @@ PATH=$PATH:$LIQUIBASE_HOME
 export IDEA_HOME=/home/petjan/Applications/idea/current
 PATH=$PATH:$IDEA_HOME/bin
 
-
 eval "$(thefuck --alias)"
+
+# Function for setting terminal tab name
+tabname() {
+  printf "\033]0;%s\007" "$1"
+}
+
+# Short named for setting terminal tab name
+tn() {
+  tabname $1
+}
+
