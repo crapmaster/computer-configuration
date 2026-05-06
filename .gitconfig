@@ -20,6 +20,7 @@
 	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
 	since = "!f() { git log \"$1^\"..HEAD; }; f"
 	since-compact = "!f() { git log --oneline \"$1^\"..HEAD; }; f"
+	tag-dates = "log --tags --simplify-by-decoration --pretty=\"format:%ci %d\""
 
 [pull]
 	rebase = true
