@@ -19,3 +19,7 @@ alias clear-trash='rm -rf ~/.local/share/Trash/*'
 # Remove double spaces from file and directory names
 alias removedoublespace="rename 's/  / /' *"
 
+# CMe2100LTEG2 aliases
+alias decrypt2100g2='python3  /home/petjan/Projects/Elvaco/github/2100/scripts/CommandCrypto/main.py --key abcdefgh12345678 --serial 0191990001 --decrypt '
+alias encrypt2100g2='python3  /home/petjan/Projects/Elvaco/github/2100/scripts/CommandCrypto/main.py --key abcdefgh12345678 --serial 0191990001 --encrypt '
+
