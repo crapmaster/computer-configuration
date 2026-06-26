@@ -45,3 +45,16 @@ replace_config '.bashrc'
 replace_config '.gitconfig'
 replace_config '.gitmessage.txt'
 
+# Force GNOME Terminal to open maximized by default
+gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar true
+gsettings set org.gnome.Terminal.Legacy.WindowScale window-state 'maximized' 2>/dev/null || true
+
+# Define a custom keybinding slot
+gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0']"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name "Maximized Terminal"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command "gnome-terminal --maximized"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><Alt>t']"
+
+# Copy Spotify start script
+cp -p start_spotify.sh ~/
+
